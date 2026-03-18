@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Gaitán-Villamizar — CV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-text: #1a1a1a;
+      --color-muted: #6b7280;
+      --color-accent: #2563eb;
+      --color-border: #e5e7eb;
+      --color-bg: #ffffff;
+      --color-tag-bg: #f3f4f6;
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    html {
+      font-size: 15px;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--color-text);
+      background: #f9fafb;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 40px auto;
+      background: var(--color-bg);
+      padding: 60px 64px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    /* ---- Header ---- */
+    header {
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .headline {
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--color-muted);
+      margin-top: 4px;
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 20px;
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: var(--color-muted);
+    }
+
+    .contact a {
+      color: var(--color-muted);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .contact a:hover {
+      color: var(--color-accent);
+    }
+
+    .contact .sep {
+      display: none;
+    }
+
+    /* ---- Sections ---- */
+    section {
+      margin-bottom: 36px;
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-muted);
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+    }
+
+    /* ---- About ---- */
+    .about p {
+      font-size: 0.93rem;
+      color: #374151;
+      max-width: 640px;
+    }
+
+    /* ---- Experience ---- */
+    .role {
+      margin-bottom: 24px;
+    }
+
+    .role:last-child {
+      margin-bottom: 0;
+    }
+
+    .role-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+    }
+
+    .role-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .role-company {
+      font-weight: 600;
+    }
+
+    .role-date {
+      font-size: 0.82rem;
+      color: var(--color-muted);
+      white-space: nowrap;
+    }
+
+    .role-description {
+      font-size: 0.88rem;
+      color: #4b5563;
+      margin-top: 4px;
+    }
+
+    .role-description ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .role-description li {
+      position: relative;
+      padding-left: 14px;
+      margin-bottom: 2px;
+    }
+
+    .role-description li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--color-muted);
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 6px;
+    }
+
+    .tech-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--color-muted);
+      background: var(--color-tag-bg);
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    /* ---- Projects ---- */
+    .project {
+      margin-bottom: 16px;
+    }
+
+    .project:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-name {
+      font-size: 0.93rem;
+      font-weight: 500;
+    }
+
+    .project-name a {
+      color: var(--color-text);
+      text-decoration: none;
+    }
+
+    .project-name a:hover {
+      color: var(--color-accent);
+    }
+
+    .project-desc {
+      font-size: 0.86rem;
+      color: #4b5563;
+      margin-top: 2px;
+    }
+
+    /* ---- Skills ---- */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 8px 24px;
+      font-size: 0.88rem;
+    }
+
+    .skills-label {
+      font-weight: 500;
+      color: var(--color-muted);
+      font-size: 0.82rem;
+    }
+
+    .skills-value {
+      color: #374151;
+    }
+
+    /* ---- Languages ---- */
+    .languages {
+      display: flex;
+      gap: 32px;
+      font-size: 0.88rem;
+    }
+
+    .lang-name {
+      font-weight: 500;
+    }
+
+    .lang-level {
+      color: var(--color-muted);
+      font-size: 0.82rem;
+    }
+
+    /* ---- Writing ---- */
+    .writing p {
+      font-size: 0.88rem;
+      color: #4b5563;
+    }
+
+    .writing a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .writing a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---- Print ---- */
+    @media print {
+      html {
+        font-size: 13.5px;
+      }
+
+      body {
+        background: white;
+      }
+
+      .page {
+        margin: 0;
+        padding: 40px 48px;
+        box-shadow: none;
+        max-width: none;
+      }
+
+      .contact a {
+        color: var(--color-muted);
+      }
+
+      section {
+        break-inside: avoid;
+      }
+
+      .role {
+        break-inside: avoid;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        margin: 0;
+        padding: 32px 24px;
+        box-shadow: none;
+      }
+
+      .role-header {
+        flex-direction: column;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .languages {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header>
+      <h1>Juan Gaitán-Villamizar</h1>
+      <div class="headline">Product Engineer — Security, AI &amp; Payments</div>
+      <div class="contact">
+        <span>juans.gaitan@gmail.com</span>
+        <span>+34 644 427 717</span>
+        <a href="https://linkedin.com/in/jgv">linkedin.com/in/jgv</a>
+        <a href="https://github.com/0xjgv">github.com/0xjgv</a>
+        <a href="https://0xjgv.space">0xjgv.space</a>
+      </div>
+    </header>
+
+    <section class="about">
+      <div class="section-title">About</div>
+      <p>Product-minded engineer with 8+ years of experience building and scaling platforms across cybersecurity, fintech, and crypto. Proven ability to lead teams, ship core product features, and operate at the intersection of security and AI. Track record spanning high-growth startups including Revolut, MoonPay, and Corgea.</p>
+    </section>
+
+    <section>
+      <div class="section-title">Experience</div>
+
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title"><span class="role-company">Corgea</span> — Technical Solutions Engineer</div>
+          <div class="role-date">Mar 2025 – Present</div>
+        </div>
+        <div class="role-description">
+          <ul>
+            <li>AI-native cybersecurity platform that autonomously finds, triages, and fixes insecure code</li>
+            <li>Bridging engineering and customer-facing workflows to deploy AI-driven security solutions at scale</li>
+          </ul>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">AI / LLMs</span>
+          <span class="tech-tag">Application Security</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title"><span class="role-company">epilot GmbH</span> — Senior Software Engineer</div>
+          <div class="role-date">Mar 2023 – Mar 2025</div>
+        </div>
+        <div class="role-description">
+          <ul>
+            <li>Led a team of 5 engineers while delivering stability improvements across the platform</li>
+            <li>Built the core feature for the internal email system to trigger automated workflows</li>
+            <li>Energy-sector SaaS platform digitising sales and operations for utility companies</li>
+          </ul>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">AWS</span>
+          <span class="tech-tag">Kubernetes</span>
+          <span class="tech-tag">Node.js</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title"><span class="role-company">MoonPay</span> — Senior Software Engineer</div>
+          <div class="role-date">Mar 2022 – Jan 2023</div>
+        </div>
+        <div class="role-description">
+          <ul>
+            <li>Built and scaled payment infrastructure powering crypto on-ramps for millions of users</li>
+            <li>Developed backend services to enhance payment accessibility and reduce transaction friction</li>
+          </ul>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">AWS</span>
+          <span class="tech-tag">Blockchain</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title"><span class="role-company">Revolut</span> — Senior Software Engineer</div>
+          <div class="role-date">Nov 2021 – Mar 2022</div>
+        </div>
+        <div class="role-description">
+          <ul>
+            <li>Worked on payment processing systems at one of Europe's largest neobanks</li>
+            <li>Contributed to backend services handling high-throughput financial transactions</li>
+          </ul>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Kubernetes</span>
+          <span class="tech-tag">Microservices</span>
+          <span class="tech-tag">AWS</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title"><span class="role-company">Argyle</span> — Software Engineer</div>
+          <div class="role-date">2020 – 2021</div>
+        </div>
+        <div class="role-description">
+          <ul>
+            <li>Built integrations for employment data connectivity platform linking payroll systems</li>
+            <li>Developed APIs enabling real-time access to income and employment verification data</li>
+          </ul>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">TypeScript</span>
+          <span class="tech-tag">AWS</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title"><span class="role-company">Chaser</span> — Software Engineer</div>
+          <div class="role-date">Oct 2018 – Sep 2020</div>
+        </div>
+        <div class="role-description">
+          <ul>
+            <li>Developed features for accounts receivable automation platform helping businesses get paid faster</li>
+            <li>Built integrations with accounting software to streamline credit management workflows</li>
+          </ul>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title"><span class="role-company">NewStore</span> — Software Engineer</div>
+          <div class="role-date">2017 – 2018</div>
+        </div>
+        <div class="role-description">
+          <ul>
+            <li>Contributed to omnichannel retail platform enabling mobile-first store operations</li>
+            <li>Built backend services supporting inventory management and order fulfilment</li>
+          </ul>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">AWS</span>
+          <span class="tech-tag">Microservices</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title"><span class="role-company">Apify</span> — Web Automation Engineer</div>
+          <div class="role-date">2016 – 2017</div>
+        </div>
+        <div class="role-description">
+          <ul>
+            <li>Built web scraping and automation tools on the Apify cloud platform</li>
+            <li>Created public actors including a BigQuery integration used by the community</li>
+          </ul>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Web Scraping</span>
+        </div>
+      </div>
+
+      <div class="role">
+        <div class="role-header">
+          <div class="role-title"><span class="role-company">Cambridge Business Initiatives</span> — Software Developer</div>
+          <div class="role-date">2015 – 2016</div>
+        </div>
+        <div class="role-description">
+          <ul>
+            <li>Early-career role building web applications and business tooling</li>
+          </ul>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">SQL</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section>
+      <div class="section-title">Side Projects</div>
+
+      <div class="project">
+        <div class="project-name"><a href="https://github.com/0xjgv">Sentinel</a></div>
+        <div class="project-desc">Security controls for production AI agents — pattern-matching firewall that inspects and filters agent actions in real time.</div>
+      </div>
+
+      <div class="project">
+        <div class="project-name"><a href="https://github.com/0xjgv">Inconnu</a></div>
+        <div class="project-desc">Zero-trust security layer for RAG systems — validates, sanitises, and controls data flowing through retrieval-augmented generation pipelines.</div>
+      </div>
+
+      <div class="project">
+        <div class="project-name"><a href="https://github.com/0xjgv">Fredirect</a></div>
+        <div class="project-desc">URL intelligence tool that tracks and analyses redirect chains to detect harmful or spoofed links, protecting against online impersonation.</div>
+      </div>
+
+    </section>
+
+    <section>
+      <div class="section-title">Skills &amp; Technologies</div>
+      <div class="skills-grid">
+        <span class="skills-label">Languages</span>
+        <span class="skills-value">Python, TypeScript, JavaScript, Go, Java, Shell</span>
+        <span class="skills-label">Cloud</span>
+        <span class="skills-value">AWS, Kubernetes, Docker, Microservices</span>
+        <span class="skills-label">Domains</span>
+        <span class="skills-value">Application Security, AI/ML, Payment Infrastructure, Blockchain, Web Automation</span>
+        <span class="skills-label">Tools</span>
+        <span class="skills-value">Node.js, PostgreSQL, Git, CI/CD, LLMs</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">Languages</div>
+      <div class="languages">
+        <div><span class="lang-name">Spanish</span> <span class="lang-level">— Native</span></div>
+        <div><span class="lang-name">English</span> <span class="lang-level">— Fluent</span></div>
+        <div><span class="lang-name">French</span> <span class="lang-level">— Fluent</span></div>
+      </div>
+    </section>
+
+    <section class="writing">
+      <div class="section-title">Writing</div>
+      <p>Author of a product engineering newsletter exploring decisions, trade-offs, and lessons in building software. Featured series: <em>Hard Decisions</em>. <a href="https://0xjgv.space">0xjgv.space</a></p>
+    </section>
+
+  </div>
+</body>
+</html>
