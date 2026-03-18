@@ -267,7 +267,7 @@
     /* ---- Print ---- */
     @media print {
       html {
-        font-size: 13.5px;
+        font-size: 13px;
       }
 
       body {
@@ -276,21 +276,38 @@
 
       .page {
         margin: 0;
-        padding: 40px 48px;
+        padding: 24px 40px;
         box-shadow: none;
         max-width: none;
       }
 
-      .contact a {
-        color: var(--color-muted);
+      header {
+        margin-bottom: 24px;
       }
 
       section {
-        break-inside: avoid;
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        margin-bottom: 12px;
       }
 
       .role {
+        margin-bottom: 16px;
         break-inside: avoid;
+      }
+
+      .project {
+        break-inside: avoid;
+      }
+
+      .about {
+        break-after: avoid;
+      }
+
+      .contact a {
+        color: var(--color-muted);
       }
     }
 
