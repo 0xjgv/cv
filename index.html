@@ -115,11 +115,27 @@
 
     /* ---- Experience ---- */
     .role {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 0 12px;
       margin-bottom: 24px;
     }
 
     .role:last-child {
       margin-bottom: 0;
+    }
+
+    .role-logo {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      border-radius: 4px;
+      margin-top: 1px;
+      grid-row: 1;
+    }
+
+    .role-content {
+      grid-column: 2;
     }
 
     .role-header {
@@ -167,6 +183,11 @@
       position: absolute;
       left: 0;
       color: var(--color-muted);
+    }
+
+    .role-description,
+    .tech-tags {
+      grid-column: 2;
     }
 
     .tech-tags {
@@ -358,168 +379,195 @@
       <div class="section-title">Experience</div>
 
       <div class="role">
-        <div class="role-header">
-          <div class="role-title"><span class="role-company">Corgea</span> — Technical Solutions Engineer</div>
-          <div class="role-date">Mar 2025 – Present</div>
-        </div>
-        <div class="role-description">
-          <ul>
-            <li>AI-native cybersecurity platform that autonomously finds, triages, and fixes insecure code</li>
-            <li>Bridging engineering and customer-facing workflows to deploy AI-driven security solutions at scale</li>
-          </ul>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">TypeScript</span>
-          <span class="tech-tag">AI / LLMs</span>
-          <span class="tech-tag">Application Security</span>
-        </div>
-      </div>
-
-      <div class="role">
-        <div class="role-header">
-          <div class="role-title"><span class="role-company">epilot GmbH</span> — Senior Software Engineer</div>
-          <div class="role-date">Mar 2023 – Mar 2025</div>
-        </div>
-        <div class="role-description">
-          <ul>
-            <li>Led a team of 5 engineers while delivering stability improvements across the platform</li>
-            <li>Built the core feature for the internal email system to trigger automated workflows</li>
-            <li>Energy-sector SaaS platform digitising sales and operations for utility companies</li>
-          </ul>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">TypeScript</span>
-          <span class="tech-tag">AWS</span>
-          <span class="tech-tag">Kubernetes</span>
-          <span class="tech-tag">Node.js</span>
+        <img class="role-logo" src="logos/corgea.png" alt="Corgea">
+        <div class="role-content">
+          <div class="role-header">
+            <div class="role-title"><span class="role-company">Corgea</span> — Technical Solutions Engineer</div>
+            <div class="role-date">Mar 2025 – Present</div>
+          </div>
+          <div class="role-description">
+            <ul>
+              <li>AI-native cybersecurity platform that autonomously finds, triages, and fixes insecure code</li>
+              <li>Bridging engineering and customer-facing workflows to deploy AI-driven security solutions at scale</li>
+            </ul>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">AI / LLMs</span>
+            <span class="tech-tag">Application Security</span>
+          </div>
         </div>
       </div>
 
       <div class="role">
-        <div class="role-header">
-          <div class="role-title"><span class="role-company">MoonPay</span> — Senior Software Engineer</div>
-          <div class="role-date">Mar 2022 – Jan 2023</div>
-        </div>
-        <div class="role-description">
-          <ul>
-            <li>Built the backend API powering the MoonPay Wallet app, enabling crypto on-ramping for thousands of users</li>
-            <li>Scaled payment infrastructure powering crypto on-ramps and off-ramps for millions of transactions</li>
-          </ul>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">TypeScript</span>
-          <span class="tech-tag">Node.js</span>
-          <span class="tech-tag">AWS</span>
-          <span class="tech-tag">Blockchain</span>
-        </div>
-      </div>
-
-      <div class="role">
-        <div class="role-header">
-          <div class="role-title"><span class="role-company">Revolut</span> — Senior Software Engineer</div>
-          <div class="role-date">Nov 2021 – Mar 2022</div>
-        </div>
-        <div class="role-description">
-          <ul>
-            <li>Built and maintained the internal risk and fraud detection platform at one of Europe's largest neobanks</li>
-            <li>Engineered backend systems to identify and mitigate fraudulent transactions at scale</li>
-          </ul>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">Java</span>
-          <span class="tech-tag">Kubernetes</span>
-          <span class="tech-tag">Microservices</span>
-          <span class="tech-tag">AWS</span>
+        <img class="role-logo" src="logos/epilot.png" alt="epilot">
+        <div class="role-content">
+          <div class="role-header">
+            <div class="role-title"><span class="role-company">epilot GmbH</span> — Senior Software Engineer</div>
+            <div class="role-date">Mar 2023 – Mar 2025</div>
+          </div>
+          <div class="role-description">
+            <ul>
+              <li>Led a team of 5 engineers while delivering stability improvements across the platform</li>
+              <li>Built the core feature for the internal email system to trigger automated workflows</li>
+              <li>Energy-sector SaaS platform digitising sales and operations for utility companies</li>
+            </ul>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">AWS</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">Node.js</span>
+          </div>
         </div>
       </div>
 
       <div class="role">
-        <div class="role-header">
-          <div class="role-title"><span class="role-company">Argyle</span> — Reverse Software Engineer</div>
-          <div class="role-date">2020 – 2021</div>
-        </div>
-        <div class="role-description">
-          <ul>
-            <li>Reverse-engineered applications and online platforms to extract structured employment and income data</li>
-            <li>Built data extraction pipelines powering Argyle's employment verification connectivity layer</li>
-          </ul>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">TypeScript</span>
-          <span class="tech-tag">AWS</span>
-        </div>
-      </div>
-
-      <div class="role">
-        <div class="role-header">
-          <div class="role-title"><span class="role-company">Chaser</span> — Software Engineer</div>
-          <div class="role-date">Oct 2018 – Sep 2020</div>
-        </div>
-        <div class="role-description">
-          <ul>
-            <li>Developed features for accounts receivable automation platform helping businesses get paid faster</li>
-            <li>Built integrations with accounting software to streamline credit management workflows</li>
-          </ul>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">PostgreSQL</span>
+        <img class="role-logo" src="logos/moonpay.png" alt="MoonPay">
+        <div class="role-content">
+          <div class="role-header">
+            <div class="role-title"><span class="role-company">MoonPay</span> — Senior Software Engineer</div>
+            <div class="role-date">Mar 2022 – Jan 2023</div>
+          </div>
+          <div class="role-description">
+            <ul>
+              <li>Built the backend API powering the MoonPay Wallet app, enabling crypto on-ramping for thousands of users</li>
+              <li>Scaled payment infrastructure powering crypto on-ramps and off-ramps for millions of transactions</li>
+            </ul>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">AWS</span>
+            <span class="tech-tag">Blockchain</span>
+          </div>
         </div>
       </div>
 
       <div class="role">
-        <div class="role-header">
-          <div class="role-title"><span class="role-company">NewStore</span> — Software Engineer</div>
-          <div class="role-date">2017 – 2018</div>
-        </div>
-        <div class="role-description">
-          <ul>
-            <li>Contributed to omnichannel retail platform enabling mobile-first store operations</li>
-            <li>Built backend services supporting inventory management and order fulfilment</li>
-          </ul>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">AWS</span>
-          <span class="tech-tag">Microservices</span>
-        </div>
-      </div>
-
-      <div class="role">
-        <div class="role-header">
-          <div class="role-title"><span class="role-company">Apify</span> — Web Automation Engineer</div>
-          <div class="role-date">2016 – 2017</div>
-        </div>
-        <div class="role-description">
-          <ul>
-            <li>Built web scraping and automation tools on the Apify cloud platform</li>
-            <li>Created public actors including a BigQuery integration used by the community</li>
-          </ul>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Node.js</span>
-          <span class="tech-tag">Web Scraping</span>
+        <img class="role-logo" src="logos/revolut.png" alt="Revolut">
+        <div class="role-content">
+          <div class="role-header">
+            <div class="role-title"><span class="role-company">Revolut</span> — Senior Software Engineer</div>
+            <div class="role-date">Nov 2021 – Mar 2022</div>
+          </div>
+          <div class="role-description">
+            <ul>
+              <li>Built and maintained the internal risk and fraud detection platform at one of Europe's largest neobanks</li>
+              <li>Engineered backend systems to identify and mitigate fraudulent transactions at scale</li>
+            </ul>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Kubernetes</span>
+            <span class="tech-tag">Microservices</span>
+            <span class="tech-tag">AWS</span>
+          </div>
         </div>
       </div>
 
       <div class="role">
-        <div class="role-header">
-          <div class="role-title"><span class="role-company">Cambridge Business Initiatives</span> — Software Developer</div>
-          <div class="role-date">2015 – 2016</div>
+        <img class="role-logo" src="logos/argyle.png" alt="Argyle">
+        <div class="role-content">
+          <div class="role-header">
+            <div class="role-title"><span class="role-company">Argyle</span> — Reverse Software Engineer</div>
+            <div class="role-date">2020 – 2021</div>
+          </div>
+          <div class="role-description">
+            <ul>
+              <li>Reverse-engineered applications and online platforms to extract structured employment and income data</li>
+              <li>Built data extraction pipelines powering Argyle's employment verification connectivity layer</li>
+            </ul>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">AWS</span>
+          </div>
         </div>
-        <div class="role-description">
-          <ul>
-            <li>Early-career role building web applications and business tooling</li>
-          </ul>
+      </div>
+
+      <div class="role">
+        <img class="role-logo" src="logos/chaser.png" alt="Chaser">
+        <div class="role-content">
+          <div class="role-header">
+            <div class="role-title"><span class="role-company">Chaser</span> — Software Engineer</div>
+            <div class="role-date">Oct 2018 – Sep 2020</div>
+          </div>
+          <div class="role-description">
+            <ul>
+              <li>Developed features for accounts receivable automation platform helping businesses get paid faster</li>
+              <li>Built integrations with accounting software to streamline credit management workflows</li>
+            </ul>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">PostgreSQL</span>
+          </div>
         </div>
-        <div class="tech-tags">
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">SQL</span>
+      </div>
+
+      <div class="role">
+        <img class="role-logo" src="logos/newstore.png" alt="NewStore">
+        <div class="role-content">
+          <div class="role-header">
+            <div class="role-title"><span class="role-company">NewStore</span> — Software Engineer</div>
+            <div class="role-date">2017 – 2018</div>
+          </div>
+          <div class="role-description">
+            <ul>
+              <li>Contributed to omnichannel retail platform enabling mobile-first store operations</li>
+              <li>Built backend services supporting inventory management and order fulfilment</li>
+            </ul>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">AWS</span>
+            <span class="tech-tag">Microservices</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role">
+        <img class="role-logo" src="logos/apify.png" alt="Apify">
+        <div class="role-content">
+          <div class="role-header">
+            <div class="role-title"><span class="role-company">Apify</span> — Web Automation Engineer</div>
+            <div class="role-date">2016 – 2017</div>
+          </div>
+          <div class="role-description">
+            <ul>
+              <li>Built web scraping and automation tools on the Apify cloud platform</li>
+              <li>Created public actors including a BigQuery integration used by the community</li>
+            </ul>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">Web Scraping</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="role">
+        <img class="role-logo" src="logos/sygris.png" alt="Sygris">
+        <div class="role-content">
+          <div class="role-header">
+            <div class="role-title"><span class="role-company">Sygris</span> — Software Developer</div>
+            <div class="role-date">2015 – 2016</div>
+          </div>
+          <div class="role-description">
+            <ul>
+              <li>Early-career role building web applications and business tooling</li>
+            </ul>
+          </div>
+          <div class="tech-tags">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">SQL</span>
+          </div>
         </div>
       </div>
 
